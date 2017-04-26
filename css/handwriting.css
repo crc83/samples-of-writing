@@ -1,0 +1,15 @@
+
+@font-face {
+    font-family: schooldash;
+    src: url("fonts/school-dash.woff");
+}
+
+@font-face {
+    font-family: school;
+    src: url("fonts/school.woff");
+}
+
+textarea.handwriting-input {
+	font-size:24px;
+	font-family: school;
+}
