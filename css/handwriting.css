@@ -13,3 +13,9 @@ textarea.handwriting-input {
 	font-size:24px;
 	font-family: school;
 }
+
+label.handwriting-label {
+	font-size:24px;
+	font-family: school;
+	font-color: gray;
+}
