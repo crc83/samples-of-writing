@@ -1,6 +1,9 @@
 var MAX_RECENT_SYMBOLS_QUATITY = 16;
-auto_copy_option = true
-
+if (Cookies['get']('auto_copy_emoji_option') == 'no') {
+    auto_copy_option = false
+} else {
+    auto_copy_option = true
+};
 MANUAL_COPY_MSG = 'Press "Ctrl + C" to copy';
 if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i ['test'](navigator['userAgent'])) {
     MAX_RECENT_SYMBOLS_QUATITY = 4;
