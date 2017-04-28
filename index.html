@@ -11,11 +11,11 @@
 
 </head>
 <body>
-	<h1>Редагування прописів</h1>
-	<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Generate</button>
-	<table>
-		<tr>
-			<td>
+	<h1 class="mdl-layout-title">Редагування прописів</h1>
+	<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Генерувати</button>
+	<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Завантажити PDF</button>
+	<div class="mdl-grid">
+		<div class="mdl-cell mdl-cell--6-col">
 				<form action="#" align="center">
 					<div class="mdl-textfield mdl-js-textfield">
 						<textarea class="mdl-textfield__input handwriting-input"  id="textInput" cols="40" rows="5"></textarea>
@@ -23,12 +23,14 @@
 					</div>
 					<div id="keyboard"></div>
 				</form>
-			</td>
-			<td>
-				<div id="preview">
-			</td>
-		<tr>
-	</table>
+		</div>
+		<div class="mdl-cell mdl-cell--6-col demo-card-wide mdl-card mdl-shadow--2dp">
+					<iframe class="preview"width="1100px" height="1414px" src="preview.html" allowfullscreen> 
+					<!-- srcdoc= -->
+						#document
+					</iframe>
+		</div>
+	</div>
 
 	<script>
 	$('#keyboard').jkeyboard({
