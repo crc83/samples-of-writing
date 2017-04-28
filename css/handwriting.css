@@ -19,3 +19,10 @@ label.handwriting-label {
 	font-family: school;
 	font-color: gray;
 }
+
+.jkeyboard .jline ul li  {
+	font-family: school !important;
+	font-size:24px !important;
+	font-color: black !important;
+	color: black !important;
+}
