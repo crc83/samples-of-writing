@@ -12,13 +12,24 @@
 </head>
 <body>
 	<h1>Редагування прописів</h1>
-		<form action="#" align="center">
-			<div class="mdl-textfield mdl-js-textfield">
-				<textarea class="mdl-textfield__input handwriting-input"  id="textInput" cols="40" rows="5"></textarea>
-				<label class="mdl-textfield__label handwriting-label" for="sample1">Аа</label>
-			</div>
-			<div id="keyboard"></div>
-		</form>
+	<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Generate</button>
+	<table>
+		<tr>
+			<td>
+				<form action="#" align="center">
+					<div class="mdl-textfield mdl-js-textfield">
+						<textarea class="mdl-textfield__input handwriting-input"  id="textInput" cols="40" rows="5"></textarea>
+						<label class="mdl-textfield__label handwriting-label" for="sample1">Аа</label>
+					</div>
+					<div id="keyboard"></div>
+				</form>
+			</td>
+			<td>
+				<div id="preview">
+			</td>
+		<tr>
+	</table>
+
 	<script>
 	$('#keyboard').jkeyboard({
 

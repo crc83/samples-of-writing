@@ -12,17 +12,20 @@
 textarea.handwriting-input {
 	font-size:48px;
 	font-family: school;
+	font-weight: bold !important;
+	padding:20px !important;
 }
 
 label.handwriting-label {
 	font-size:48px;
 	font-family: school;
 	font-color: gray;
+	padding:20px !important;
 }
 
 .jkeyboard .jline ul li  {
 	font-family: school !important;
 	font-size:48px !important;
-	font-color: black !important;
+	font-weight: bold !important;
 	color: black !important;
 }
