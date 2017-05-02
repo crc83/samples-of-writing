@@ -53,6 +53,12 @@ label.handwriting-label {
 	width: 100% !important;
 }
 
+h3.writingtask-title { 
+	font-size: 32px; 
+	color: #0066b3; 
+	line-height: 16px;
+}
+
 span.writingtask-label { 
 	font-size: 16px !important; 
 	color: #222 !important; 
@@ -65,6 +71,10 @@ div.writingtask-handwriting {
 	font-family: schooldash !important; 
 	font-size: 68px !important; 
 	line-height: 76px !important; 
+}
+
+span.writingtask-latin { 
+	font-family: school !important; 
 }
 
 span.writingtask-bold { 

@@ -62,10 +62,19 @@
 	});
 	
 	$("#getPdf").on('click', function () {
-		var printDoc = new jsPDF();
-		printDoc.fromHTML($('#pdfContent').get(0), 10, 10, {'width': 180});
-		printDoc.autoPrint();
-		printDoc.output("dataurlnewwindow");});
+		w=window.open();
+		w.document.write(`
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="css/preview.css">
+	<meta charset="UTF-8">
+</head>
+<body>
+		`)
+		w.document.write($('#pdfContent').html());});
+		w.document.write(`
+</body>
+		`);
 	</script>
 </body>
 
