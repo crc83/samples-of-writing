@@ -32,9 +32,12 @@ label.handwriting-label {
 #pdfContent { 
 	margin: 0 !important; 
 	padding: 62px 60px !important; 
-	width: 860px !important; 
-	height: 1280px !important;
-	background: url("preview_background.jpg") no-repeat 0 0;
+	width: 100%; 
+	height: 1280px;
+	background-size: 860px 1280px;
+	background-image: url("preview_background.jpg");
+	background-position: left top;
+	background-repeat: no-repeat;
 }
 
 .writingtask-clear { 
@@ -55,7 +58,6 @@ label.handwriting-label {
 
 h3.writingtask-title { 
 	font-size: 32px; 
-	color: #0066b3; 
 	line-height: 16px;
 }
 
@@ -89,13 +91,19 @@ span.writingtask-normal {
 @media print {
 	body * {
 		visibility: hidden;
+		display: none;
 	}
 
 	#pdfContent, #pdfContent * {
-		visibility: visible;
+		display: block;
+		visibility: visible !important;
 	}
 
 	#pdfContent {
+		position: absolute;
+		top: 0px !important;
+		left: 0px !important;
+		display: block;
 		-webkit-print-color-adjust: exact;
 	}
 }

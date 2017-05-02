@@ -25,14 +25,15 @@ body {
 }
 
 .writingtask-tabtitle { 
-	color: #A00; 
+	color: black; 
 	margin: 16px auto 6px auto; 
 	text-align: center; 
 	width: 100%;
 }
+
 h3.writingtask-title { 
 	font-size: 32px; 
-	color: #0066b3; 
+	color: black;
 	line-height: 16px;
 }
 
