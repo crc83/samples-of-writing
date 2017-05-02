@@ -27,54 +27,45 @@
 		</div>
 		<div id="pdfDiv" class="mdl-cell mdl-cell--6-col demo-card-wide mdl-card mdl-shadow--2dp">
 			<div id="pdfContent">
-			</div>
-			
+				<div class="writingtask right">&nbsp;<span class="label"></span></div>
+					<div class="writingtask-clear"></div>
+					<div class="writingtask-clear"></div>
+					<div class="writingtask-tabtitle"><h3 class="title">ПРОПИСИ</h3></div>
+					<div class="writingtask-clear"></div>
+					<div class="writingtask-wrap">
+						<div id="taskContent" class="writingtask-handwriting">
+						</div>
+					</div>
+				</div>
+			</div>		
 		</div>
 	</div>
 
 	<script>
 	$('#keyboard').jkeyboard({
 
-	  layout: "exersise",
-	  input: $('#textInput')
+		layout: "exersise",
+		input: $('#textInput')
 	});
 	
 	$("#generateWritingTask").on('click', function () {
-		var div = document.getElementById('pdfContent');
-		div.innerHTML = 
-			`
-<div class="writingtask right">&nbsp;<span class="label"></span></div>
-<div class="writingtask-clear"></div>
-<div class="writingtask-clear"></div>
-<div class="writingtask-tabtitle"><h3 class="title">ПРОПИСИ</h3></div>
-<div class="writingtask-clear"></div>
-<div class="writingtask-wrap">
-<div class="writingtask-handwriting">
-<span class="writingtask-bold">А</span> А А А А<br>
-<span class="writingtask-bold">а</span> а а а а<br>
-<span class="writingtask-bold">Аа</span> Аа Аа Аа<br>
-<span class="writingtask-bold">Б</span> Б Б Б Б<br>
-<span class="writingtask-bold">б</span> б б б б<br>
-<span class="writingtask-bold">Бб</span> Бб Бб Бб<br>
-<span class="writingtask-bold">В</span> В В В В<br>
-<span class="writingtask-bold">в</span> в в в в<br>
-<span class="writingtask-bold">Вв</span> Вв Вв Вв<br>
-<span class="writingtask-bold">Г</span> Г Г Г Г<br>
-<span class="writingtask-bold">г</span> г г г г<br>
-<span class="writingtask-bold">Гг</span> Гг Гг Гг<br>
-<span class="writingtask-bold">д</span> д д д д<br>
-<span class="writingtask-bold">Д</span> Д Д Д Д<br>
-</div>
-</div>
-			`
+		var template = document.getElementById('textInput').value.split('\n');
+		//14 lines max
+		var tokens = template.length;
+		
+		var div = document.getElementById('taskContent');
+		div.innerHTML =''
+		for (var i = 0; i < tokens; i++) {
+			console.log(template[i])
+			div.innerHTML += `<span class="writingtask-bold">${template[i]}</span>${template[i]} ${template[i]} ${template[i]} ${template[i]}<br>`
+		}
 	});
 	
 	$("#getPdf").on('click', function () {
 		var printDoc = new jsPDF();
 		printDoc.fromHTML($('#pdfContent').get(0), 10, 10, {'width': 180});
 		printDoc.autoPrint();
-		printDoc.output("dataurlnewwindow");
-	});
+		printDoc.output("dataurlnewwindow");});
 	</script>
 </body>
 

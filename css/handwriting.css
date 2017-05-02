@@ -1,12 +1,12 @@
 
 @font-face {
-    font-family: schooldash;
-    src: url("fonts/school-dash.woff");
+	font-family: schooldash;
+	src: url("fonts/school-dash.woff");
 }
 
 @font-face {
-    font-family: school;
-    src: url("fonts/school.woff");
+	font-family: school;
+	src: url("fonts/school.woff");
 }
 
 textarea.handwriting-input {
@@ -29,18 +29,11 @@ label.handwriting-label {
 	font-weight: bold !important;
 	color: black !important;
 }
-
-#pdfDiv {
-	
-}
-
 #pdfContent { 
-	max-width: 100vw;
-	max-height: 56.25vw;
 	margin: 0 !important; 
 	padding: 62px 60px !important; 
-	width: 860px; 
-	height: 1280px; 
+	width: 860px !important; 
+	height: 1280px !important;
 	background: url("preview_background.jpg") no-repeat 0 0;
 }
 
@@ -78,11 +71,21 @@ span.writingtask-bold {
 	font-family: school !important; 
 }
 
-span.writingtask-bold  { 
-	font-family: school !important; 
-}
-
-span.writingtask-bold  { 
+span.writingtask-normal { 
 	font-family: school !important; 
 	color:#bbbbbb !important; 
+}
+
+@media print {
+	body * {
+		visibility: hidden;
+	}
+
+	#pdfContent, #pdfContent * {
+		visibility: visible;
+	}
+
+	#pdfContent {
+
+	}
 }
