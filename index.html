@@ -8,12 +8,13 @@
 	<script defer type="text/javascript" src="https://code.getmdl.io/1.3.0/material.min.js"></script>
 	<script type="text/javascript" language="javascript" src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 	<script type="text/javascript" language="javascript" src="js/jkeyboard.js"></script>
+	<script type="text/javascript" language="javascript" src="js/jspdf.min.js"></script>
 
 </head>
 <body>
 	<h1 class="mdl-layout-title">Редагування прописів</h1>
-	<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Генерувати</button>
-	<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Завантажити PDF</button>
+	<button id="generateWritingTask" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Генерувати</button>
+	<button id="getPdf" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Завантажити PDF</button>
 	<div class="mdl-grid">
 		<div class="mdl-cell mdl-cell--6-col">
 				<form action="#" align="center">
@@ -24,11 +25,10 @@
 					<div id="keyboard"></div>
 				</form>
 		</div>
-		<div class="mdl-cell mdl-cell--6-col demo-card-wide mdl-card mdl-shadow--2dp">
-					<iframe class="preview"width="1100px" height="1414px" src="preview.html" allowfullscreen> 
-					<!-- srcdoc= -->
-						#document
-					</iframe>
+		<div id="pdfDiv" class="mdl-cell mdl-cell--6-col demo-card-wide mdl-card mdl-shadow--2dp">
+			<div id="pdfContent">
+			</div>
+			
 		</div>
 	</div>
 
@@ -37,6 +37,43 @@
 
 	  layout: "exersise",
 	  input: $('#textInput')
+	});
+	
+	$("#generateWritingTask").on('click', function () {
+		var div = document.getElementById('pdfContent');
+		div.innerHTML = 
+			`
+<div class="writingtask right">&nbsp;<span class="label"></span></div>
+<div class="writingtask-clear"></div>
+<div class="writingtask-clear"></div>
+<div class="writingtask-tabtitle"><h3 class="title">ПРОПИСИ</h3></div>
+<div class="writingtask-clear"></div>
+<div class="writingtask-wrap">
+<div class="writingtask-handwriting">
+<span class="writingtask-bold">А</span> А А А А<br>
+<span class="writingtask-bold">а</span> а а а а<br>
+<span class="writingtask-bold">Аа</span> Аа Аа Аа<br>
+<span class="writingtask-bold">Б</span> Б Б Б Б<br>
+<span class="writingtask-bold">б</span> б б б б<br>
+<span class="writingtask-bold">Бб</span> Бб Бб Бб<br>
+<span class="writingtask-bold">В</span> В В В В<br>
+<span class="writingtask-bold">в</span> в в в в<br>
+<span class="writingtask-bold">Вв</span> Вв Вв Вв<br>
+<span class="writingtask-bold">Г</span> Г Г Г Г<br>
+<span class="writingtask-bold">г</span> г г г г<br>
+<span class="writingtask-bold">Гг</span> Гг Гг Гг<br>
+<span class="writingtask-bold">д</span> д д д д<br>
+<span class="writingtask-bold">Д</span> Д Д Д Д<br>
+</div>
+</div>
+			`
+	});
+	
+	$("#getPdf").on('click', function () {
+		var printDoc = new jsPDF();
+		printDoc.fromHTML($('#pdfContent').get(0), 10, 10, {'width': 180});
+		printDoc.autoPrint();
+		printDoc.output("dataurlnewwindow");
 	});
 	</script>
 </body>

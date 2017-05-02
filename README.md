@@ -13,4 +13,8 @@ Onscreen keyboard is taken from here:
 http://www.jqueryscript.net/other/Simple-On-Screen-Visual-Keyboard-with-jQuery-jkeyboard.html
 I added additional layout "exersise" to havee part of characters on screen
 
+#jsPDF
+Solution described here:
+http://stackoverflow.com/questions/18191893/generate-pdf-from-html-in-div-using-javascript
+Library itself located here: https://github.com/MrRio/jsPDF/blob/master/dist/jspdf.min.js
 

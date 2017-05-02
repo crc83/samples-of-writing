@@ -8,7 +8,7 @@
     src: url("fonts/school.woff");
 }
 
-textarea.handwriting-input {font-family: school;}
+
 body { margin: 0; padding: 70px 70px 70px 80px; }
 .clear { display: block; height: 1px; clear: both }
 .right { text-align: right; }
