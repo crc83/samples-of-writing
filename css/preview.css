@@ -1,11 +1,11 @@
 
 @font-face {
-    font-family: schooldash;
-    src: url("fonts/school-dash.woff");
+	font-family: schooldash;
+	src: url("fonts/school-dash.woff");
 }
 @font-face {
-    font-family: school;
-    src: url("fonts/school.woff");
+	font-family: school;
+	src: url("fonts/school.woff");
 }
 
 
@@ -58,5 +58,6 @@ body {
 	height: 1280px; 
 	background: url("preview_background.jpg") 
 	no-repeat 0 0;
+	-webkit-print-color-adjust: exact;
 }
 

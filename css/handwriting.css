@@ -96,6 +96,6 @@ span.writingtask-normal {
 	}
 
 	#pdfContent {
-
+		-webkit-print-color-adjust: exact;
 	}
 }
